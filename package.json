@@ -1,0 +1,18 @@
+{
+  "name": "alea",
+  "version": "1.0.0",
+  "description": "Dice library",
+  "license": "BSD-2-Clause",
+
+  "main": "index.js",
+
+  "author": "AKANE AKAGI <akaregi@fedyya.net> (https://www.fedyya.net)",
+  "homepage": "https://github.com/akaregi/alea",
+
+  "repository": "git@github.com:akaregi/alea.git",
+  "bugs": {
+    "url": "https://github.com/akaregi/alea/issues"
+  },
+
+  "keywords": ["dice", "roll", "diceroll"]
+}
