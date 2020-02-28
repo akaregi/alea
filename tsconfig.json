@@ -1,8 +1,13 @@
 {
-    "compilerOptions": {
-        "esModuleInterop": true,
-        "incremental": true,
-        "removeComments": true,
-        "strict": true
-    }
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "incremental": true,
+    "removeComments": true,
+    "strict": true,
+    "newLine": "lf",
+    "outDir": "dist"
+  }
 }

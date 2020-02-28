@@ -29,5 +29,8 @@
   },
   "dependencies": {
     "pure-rand": "^2.0.0"
+  },
+  "scripts": {
+    "build": "tsc"
   }
 }
