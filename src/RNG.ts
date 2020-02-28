@@ -23,7 +23,7 @@ export class RandomNumberGenerator {
    * @param min 乱数の最小値
    * @param max 乱数の最大値
    */
-  constructor (seed: number, min: number, max: number) {
+  constructor (seed: number, private min: number, private max: number) {
     this.xorshift = xorshift128plus(seed)
     this.distribution = uniformIntDistribution(min, max)
 
@@ -39,7 +39,7 @@ export class RandomNumberGenerator {
    * @return 現在の乱数
    */
   next (): Number {
-    const next = this.renew()
+    const next = this.nextRNG()
 
     this.generator = next.generator
     this.N = next.n
@@ -47,10 +47,40 @@ export class RandomNumberGenerator {
     return this.N
   }
 
+  setMin (min: number) {
+    this.min = min
+
+    this.updateDist()
+  }
+
+  setMax (max: number) {
+    this.max = max
+
+    this.updateDist()
+  }
+
+  /**
+   * 乱数分布を更新する
+   *
+   * @param min 乱数の最最小値
+   * @param max 乱数の最大値
+   */
+  updateDist (min?: number, max?: number) {
+    if (min !== undefined) {
+      this.min = min
+    }
+
+    if (max !== undefined) {
+      this.max = max
+    }
+
+    this.distribution = uniformIntDistribution(this.min, this.max)
+  }
+
   /**
    * 乱数装置を次の状態に進める
    */
-  private renew () {
+  private nextRNG () {
     const next = this.distribution(this.generator)
 
     return {
