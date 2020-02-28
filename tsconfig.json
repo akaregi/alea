@@ -1,0 +1,8 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "incremental": true,
+        "removeComments": true,
+        "strict": true
+    }
+}
