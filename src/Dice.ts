@@ -28,7 +28,7 @@ export enum Operator {
   // 1d100<10; X < Y
   SMALLER,
 
-  // X >= Y
+  // 1d100>=10; X >= Y
   BIGGER_OR_EQUAL,
 
   // 1d100<=10; X <= Y
