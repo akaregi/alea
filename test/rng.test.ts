@@ -1,9 +1,11 @@
+import { Engine } from './../src/rng/Engine'
+import { RandomNumberGenerator } from './../src/rng/RandomNumberGenerator'
 import { assert } from 'chai'
-import { RandomNumberGenerator } from '../src/RNG'
 
 const SEED = 42
+const ENGINE = Engine.XORSHIFT128PLUS
 
-const rng = new RandomNumberGenerator(SEED, 1, 100)
+const rng = new RandomNumberGenerator(1, 100, SEED, ENGINE)
 
 describe('乱数生成装置', () => {
   it('D3', () => assert(test(1, 3)))
