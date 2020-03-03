@@ -9,5 +9,8 @@
     "strict": true,
     "newLine": "lf",
     "outDir": "dist"
-  }
+  },
+  "exclude": [
+    "test"
+  ]
 }
