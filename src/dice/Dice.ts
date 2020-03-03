@@ -1,3 +1,5 @@
+import { Operator } from './Operator'
+
 /**
  * ダイス式(e.g. `xDn<=C`)のインタフェース
  */
@@ -34,34 +36,4 @@ export interface DiceCondition {
    * ダイスの条件オペランド(`xDn<=C` の `C`)
    */
   operand: Number
-}
-
-/**
- * ダイス条件式のオペレータ
- */
-export enum Operator {
-  /**
-   * X > Y
-   */
-  BIGGER,
-
-  /**
-   * X < Y
-   */
-  SMALLER,
-
-  /**
-   * X >= Y
-   */
-  BIGGER_OR_EQUAL,
-
-  /**
-   * X <= Y
-   */
-  SMALLER_OR_EQUAL,
-
-  /**
-   * X = Y
-   */
-  EQUAL
 }
