@@ -1,12 +1,10 @@
+import { ParseState } from './ParseState'
 import { DiceFormula } from '../dice/Dice'
 
 /** ダイス式のパース結果 */
-export interface ParseResult {
+export interface ParseResponse {
   /** エラーの有無 */
-  error: boolean,
-
-  /** メッセージ */
-  message: string,
+  state: ParseState,
 
   /** ダイス式 */
   formula?: DiceFormula
@@ -19,10 +17,9 @@ export interface ParseResult {
  * @param message メッセージ
  * @param formula ダイス式
  */
-export function newResult (err: boolean, message: string, formula?: DiceFormula): ParseResult {
+export function newResult (state: ParseState, formula?: DiceFormula): ParseResponse {
   return {
-    error: err,
-    message: message,
+    state: state,
     formula: formula
   }
 }
