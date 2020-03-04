@@ -33,22 +33,25 @@ export enum Operator {
   UNKNOWN = '?'
 }
 
-export function getOperator (operator: string): Operator {
+export function getOperator (operator: string): Operator | undefined {
   switch (operator) {
     case '>':
       return Operator.BIGGER
 
-    case '>=':
+    case '>=' || '=>':
       return Operator.BIGGER_OR_EQUAL
 
     case '<':
       return Operator.SMALLER
 
-    case '<=':
+    case '<=' || '=<':
       return Operator.SMALLER_OR_EQUAL
 
     case '=':
       return Operator.EQUAL
+
+    case undefined || null:
+      return undefined
 
     default:
       return Operator.UNKNOWN
